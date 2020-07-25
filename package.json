@@ -5,6 +5,11 @@
   "repository": "https://github.com/oliverngola/clean-node-api",
   "author": "Oliveira Ngola <oliveiraernestongola123@gmail.com>",
   "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "standard"
+    ]
+  },
   "devDependencies": {
     "lint-staged": "^10.2.11",
     "standard": "^14.3.4"
