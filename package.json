@@ -6,6 +6,7 @@
   "author": "Oliveira Ngola <oliveiraernestongola123@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "lint-staged": "^10.2.11",
     "standard": "^14.3.4"
   }
 }
