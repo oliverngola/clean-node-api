@@ -10,7 +10,13 @@
       "standard"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
+    "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "standard": "^14.3.4"
   }
