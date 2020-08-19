@@ -3,12 +3,11 @@ const MissingParamError = require('../helpers/missing-param-error')
 
 const makeSut = () => {
   class AuthUseCaseSpy {
-    auth(email, password) {
+    auth (email, password) {
       this.email = email
       this.password = password
     }
   }
-
 
   const authUseCaseSpy = new AuthUseCaseSpy()
   const sut = new LoginRouter(authUseCaseSpy)
@@ -16,21 +15,21 @@ const makeSut = () => {
 }
 
 describe('Login Router', () => {
-  test('should return 500 if no httpRequest is provided', () => {
+  test('Should return 500 if no httpRequest is provided', () => {
     const { sut } = makeSut()
 
     const httpResponse = sut.route()
     expect(httpResponse.statusCode).toBe(500)
   })
 
-  test('should return 500 if no httpRequest has no body', () => {
+  test('Should return 500 if no httpRequest has no body', () => {
     const { sut } = makeSut()
 
     const httpResponse = sut.route({})
     expect(httpResponse.statusCode).toBe(500)
   })
 
-  test('should return 400 if no email is provided', () => {
+  test('Should return 400 if no email is provided', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
@@ -43,7 +42,7 @@ describe('Login Router', () => {
     expect(httpResponse.body).toEqual(new MissingParamError('email'))
   })
 
-  test('should return 400 if no password is provided', () => {
+  test('Should return 400 if no password is provided', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
@@ -56,7 +55,7 @@ describe('Login Router', () => {
     expect(httpResponse.body).toEqual(new MissingParamError('password'))
   })
 
-  test('should call AuthUseCase with correct params', () => {
+  test('Should call AuthUseCase with correct params', () => {
     const { sut, authUseCaseSpy } = makeSut()
     const httpRequest = {
       body: {
@@ -68,5 +67,18 @@ describe('Login Router', () => {
     sut.route(httpRequest)
     expect(authUseCaseSpy.email).toBe(httpRequest.body.email)
     expect(authUseCaseSpy.password).toBe(httpRequest.body.password)
+  })
+
+  test('Should return 401 when invalid credencials are provided', () => {
+    const { sut } = makeSut()
+    const httpRequest = {
+      body: {
+        email: 'invalid_email@gmail.com',
+        password: 'invalid_password'
+      }
+    }
+
+    const httpResponse = sut.route(httpRequest)
+    expect(httpResponse.statusCode).toBe(401)
   })
 })
