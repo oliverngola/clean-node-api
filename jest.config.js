@@ -1,5 +1,5 @@
 module.exports = {
-  coverageDirectory: '__tests__/coverage',
+  coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   testEnvironment: 'node',
   collectCoverageFrom: ['**/src/**/*.js']
