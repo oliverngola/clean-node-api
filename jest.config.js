@@ -1,5 +1,5 @@
 module.exports = {
-  coverageDirectory: '__test__/coverage',
+  coverageDirectory: '__tests__/coverage',
   coverageProvider: 'v8',
   testEnvironment: 'node'
 }

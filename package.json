@@ -6,9 +6,10 @@
   "author": "Oliveira Ngola <oliveiraernestongola123@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --watchAll --silent --noStackTrace",
-    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace",
-    "test:ci": "jest --coverage --noStackTrace --silent"
+    "test": "jest --silent --noStackTrace --passWithNoTests",
+    "test:unit": "yarn test --watch",
+    "test:staged": "yarn test --findRelatedTests",
+    "test:ci": "yarn test --coverage"
   },
   "standard": {
     "env": [
