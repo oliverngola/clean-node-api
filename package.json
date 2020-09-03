@@ -6,8 +6,8 @@
   "author": "Oliveira Ngola <oliveiraernestongola123@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --watchAll",
-    "test:staged": "jest --passWithNoTests"
+    "test": "jest --watchAll --silent --noStackTrace",
+    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace"
   },
   "standard": {
     "env": [
