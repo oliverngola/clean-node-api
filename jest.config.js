@@ -1,5 +1,6 @@
 module.exports = {
   coverageDirectory: '__tests__/coverage',
   coverageProvider: 'v8',
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  collectCorageFrom: ['**/src/**/*.js']
 }
