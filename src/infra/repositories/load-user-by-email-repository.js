@@ -9,8 +9,9 @@ module.exports = class LoadUserByEmailRepository {
     if (!email) {
       throw new MissingParamError('email')
     }
-
-    const user = await this.userModel.findOne({ email }, {
+    const user = await this.userModel.findOne({
+      email
+    }, {
       projection: {
         password: 1
       }
