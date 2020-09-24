@@ -1,11 +1,12 @@
 {
   "name": "clean-node-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main/index.js",
   "repository": "https://github.com/oliverngola/clean-node-api",
   "author": "Oliveira Ngola <oliveiraernestongola123@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node ./src/main/index.js",
     "test": "jest --noStackTrace --passWithNoTests",
     "test:unit": "yarn test --watch -c jest-unit-config.js",
     "test:integration": "yarn test --watch -c jest-integration-config.js",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.2",
     "validator": "^13.1.1"
