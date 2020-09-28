@@ -3,8 +3,8 @@ const app = require('../config/app')
 
 describe('CORS Middleware', () => {
   test('Should enabale CORS', async () => {
-    app.get('/test_cors', (req, res) => {
-      return res.json({})
+    app.get('/test_cors', (request, response) => {
+      return response.json({})
     })
 
     const response = await request(app).get('/test_cors')
