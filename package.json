@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./src/main/index.js",
+    "dev": "nodemon ./src/main/index.js",
     "test": "jest --noStackTrace --passWithNoTests --runInBand",
     "test:unit": "yarn test --watch -c jest-unit-config.js",
     "test:integration": "yarn test --watch -c jest-integration-config.js",
@@ -25,6 +26,7 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
     "standard": "^14.3.4",
     "supertest": "^5.0.0"
   },
