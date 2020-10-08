@@ -202,14 +202,14 @@ describe('Login Router', () => {
     expect(emailValidatorSpy.email).toBe(httpRequest.body.email)
   })
 
-  test('Should throws if any dependency throws', async () => {
+  test('Should throws if invalid dependencies are provided', async () => {
     const invalid = {}
     const authUseCase = makeAuthUseCase()
     const suts = [].concat(
       new LoginRouter(),
       new LoginRouter({}),
       new LoginRouter({ authUseCase: invalid }),
-      new LoginRouter({ authUseCase }),
+      new LoginRouter({ authUseCase, emailValidator: null }),
       new LoginRouter({ authUseCase, emailValidator: invalid })
     )
 
