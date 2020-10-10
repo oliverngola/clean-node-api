@@ -1,10 +1,10 @@
 const path = require('path')
 require('dotenv').config({ path: path.resolve(__dirname, '..', '..', '.env') })
 const MongoHelper = require('../infra/helpers/mongo-helper')
-const env = require('./config/env')
+const { mongoUrl, port } = require('./config/env')
 
-MongoHelper.connect(env.mongoUrl)
+MongoHelper.connect(mongoUrl)
   .then(() => {
     const app = require('./config/app')
-    app.listen(5858, () => console.log('SERVER IS RUNNING'))
+    app.listen(port, () => console.log(`SERVER IS RUNNING on http://localhost:${port}/api`))
   }).catch(console.error)
