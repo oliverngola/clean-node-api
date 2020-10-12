@@ -1,2 +1,3 @@
 # clean-node-api
-Aprendendo fazer uma API em Nodejs usando TDD, Clean Architecture com Rodrigo Manguinho.
+
+Learning to build an api using Nodejs, TDD, SOLID and Clean Architecture..
